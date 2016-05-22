@@ -1,36 +1,40 @@
 function militaryAlphabet(input) {
-	var input_uppercase = toUpperCase(input);
+	// var input_uppercase = toUpperCase(input);
 	var result = "";
-	var military_alphabet = array(
-			'A' => 'Alpha',
-			'B' => 'Bravo',
-			'C' => 'Charlie',
-			'D' => 'Delta', 
-			'E' => 'Echo',
-			'F' => 'Foxtrot',
-			'G' => 'Golf',
-			'H' => 'Hotel',
-			'I' => 'India',
-			'J' => 'Juliet',
-			'K' => 'Kilo',
-			'L' => 'Lima',
-			'M' => 'Mike',
-			'N' => 'November',
-			'O' => 'Oscar',
-			'P' => 'Papa',
-			'Q' => 'Quebec',
-			'R' => 'Romeo',
-			'S' => 'Sierra',
-			'T' => 'Tango',
-			'U' => 'Uniform',
-			'V' => 'Victor',
-			'W' => 'Whiskey',
-			'X' => 'X-ray',
-			'Y' => 'Yankee',
-			'Z' => 'Zulu'
-		);
+	var military_alphabet = new Array();
+	military_alphabet['A'] = 'Alpha';
+	military_alphabet['B'] = 'Bravo';
+	military_alphabet['C'] = 'Charlie';
+	military_alphabet['D'] = 'Delta';
+	military_alphabet['E'] = 'Echo';
+	military_alphabet['F'] = 'Foxtrot';
+	military_alphabet['G'] = 'Golf';
+	military_alphabet['H'] = 'Hotel';
+	military_alphabet['I'] = 'India';
+	military_alphabet['J'] = 'Juliet';
+	military_alphabet['K'] = 'Kilo';
+	military_alphabet['L'] = 'Lima';
+	military_alphabet['M'] = 'Mike';
+	military_alphabet['N'] = 'November';
+	military_alphabet['O'] = 'Oscar';
+	military_alphabet['P'] = 'Papa';
+	military_alphabet['Q'] = 'Quebec';
+	military_alphabet['R'] = 'Romeo';
+	military_alphabet['S'] = 'Sierra';
+	military_alphabet['T'] = 'Tango';
+	military_alphabet['U'] = 'Uniform';
+	military_alphabet['V'] = 'Victor';
+	military_alphabet['W'] = 'Whiskey';
+	military_alphabet['X'] = 'X-ray';
+	military_alphabet['Y'] = 'Yankee';
+	military_alphabet['Z'] = 'Zulu';
+		
 	//validate
-	if (input)
+	if (input == "") {
+		return "Oops!";
+	} else {
+		return "Fired nicely with content.";
+	}
 
 	//take sentence with multiple words
 	//loop through letters
@@ -47,7 +51,8 @@ $(document).ready(function() {
 	event.preventDefault();
 
 	var input = $('#input').val();
-	// var result = militaryAlphabet(input);
-	$('#form_output').append('You said: ' + input);
+	var result = militaryAlphabet(input);
+	$('#form_output').empty();
+	$('#form_output').append('You said: ' + result);
 	});
 }); 
