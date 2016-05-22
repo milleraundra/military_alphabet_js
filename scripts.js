@@ -1,5 +1,4 @@
-function militaryAlphabet(input) {
-	// var input_uppercase = toUpperCase(input);
+militaryAlphabet = function(input) {
 	var result = "";
 	var military_alphabet = new Array();
 	military_alphabet['A'] = 'Alpha';
@@ -28,13 +27,13 @@ function militaryAlphabet(input) {
 	military_alphabet['X'] = 'X-ray';
 	military_alphabet['Y'] = 'Yankee';
 	military_alphabet['Z'] = 'Zulu';
-		
+
 	//validate
-	if (input == "") {
-		return "Oops!";
-	} else {
-		return "Fired nicely with content.";
-	}
+		//TEMPORARILY ASSUME SANITIZED INPUT
+
+	var input_uppercase = input.toUpperCase();
+	var input_array = input_uppercase.split("");
+	console.log(input_array);
 
 	//take sentence with multiple words
 	//loop through letters
