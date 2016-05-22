@@ -1,6 +1,13 @@
+
+
+
+
 $(document).ready(function() {
 	$('#form_input').submit(function(event) {
 	event.preventDefault();
-	alert("Hello, World!");
+
+	var input = $('#input').val();
+	// var result = militaryAlphabet(input);
+	$('#form_output').append('You said: ' + input);
 	});
 }); 
