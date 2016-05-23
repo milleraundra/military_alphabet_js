@@ -1,5 +1,9 @@
+function getMilitaryAlphabetKeyAndValuePairs(key, value, map) {
+	console.log("key: " + key + " | value: " + value);
+}
+
 militaryAlphabet = function(input) {
-	var result = "";
+	var result = new Array;
 	var military_alphabet = new Array();
 	military_alphabet['A'] = 'Alpha';
 	military_alphabet['B'] = 'Bravo';
@@ -33,14 +37,19 @@ militaryAlphabet = function(input) {
 
 	var input_uppercase = input.toUpperCase();
 	var input_array = input_uppercase.split("");
-	console.log(input_array);
 
-	//take sentence with multiple words
-	//loop through letters
-		//if a letter, return assocaited
-		//if a space, '<br>'
-	//push to final array
-	//return array
+	input_array.forEach(function(letter) {
+
+		if((letter >= 'A') && (letter <= 'Z')) {
+			result.push(military_alphabet[letter]);
+		} else if ( letter === " ") {
+			result.push('<br>');
+		}
+
+	});
+	result = result.join(" ");
+	return result;
+
 }
 
 
@@ -52,6 +61,6 @@ $(document).ready(function() {
 	var input = $('#input').val();
 	var result = militaryAlphabet(input);
 	$('#form_output').empty();
-	$('#form_output').append('You said: ' + result);
+	$('#form_output').append(result);
 	});
 }); 
